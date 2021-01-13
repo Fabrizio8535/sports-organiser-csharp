@@ -1,0 +1,101 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/*Border and its types on card deck (for index)
+
+.card-body {
+    border-radius: 5px;
+    border: 2px solid #D3D3D3;
+    padding: 10px;
+}
+    */
+
+/*For Details page*/
+.row {
+    text-align: left;
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #121111;
+    border-radius: 10px;
+}
+
+/*settings for Img-responsive class*/
+.img-responsive {
+    border: 2px solid #0b44cc;
+    border-radius: 10px;
+}
+
+/*Setting default width for button class*/
+.btn {
+    width: 75px;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th.addUser {
+    width: 30%;
+}
+th.Name {
+    width: 15%;
+}
+
+th.Biography {
+    width: 30%;
+}
+
+th.Category, th.Gender, th.LocationOfWork {
+    width: 7%;
+}
+
+/*Card settings on Detals.cshtml*/
+.card-img-top {
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

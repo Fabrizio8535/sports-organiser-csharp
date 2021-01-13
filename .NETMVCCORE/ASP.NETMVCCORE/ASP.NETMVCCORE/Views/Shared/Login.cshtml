@@ -1,0 +1,33 @@
+﻿@model ASP.NETMVCCORE.ViewModels.AdminLoginViewModel
+
+@{
+    ViewBag.Title = "Administrator Login Form";
+}
+
+<h1>Administrator Login</h1>
+
+<form asp-controller="Admin" asp-action="Login" method="POST">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label asp-for="RememberMe">
+                <input asp-for="RememberMe" />
+                @Html.DisplayNameFor(x => x.RememberMe)
+            </label>
+        </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success">
+</form>
+

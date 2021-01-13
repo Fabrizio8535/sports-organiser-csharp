@@ -1,0 +1,75 @@
+﻿@model AddEditUserViewModel
+
+@{
+    ViewBag.Title = "User Form";
+}
+<h1>User Form</h1>
+<div class="text-danger" asp-validation-summary="All"></div>
+<form class="form-horizontal" asp-controller="Admin" asp-action="AddorEdit" method="POST">
+    <div class="container-fluid">
+        <div class="form-group">
+            <label class="control-label" asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="DOB"></label>
+            <input class="form-control" asp-for="DOB" />
+            <span class="text-danger" asp-validation-for="DOB"></span>
+        </div>
+        <!--Gender Select-->
+        <div class="form-group">
+            <label class="control-label" asp-for="Gender" class="col-sm-2 col-form-label"></label>
+            <select class="form-control" asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()">
+                <option value="">Please Select</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Gender"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="Email"></label>
+            <input class="form-control" asp-for="Email" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="MobileNo"></label>
+            <input class="form-control" asp-for="MobileNo" />
+            <span class="text-danger" asp-validation-for="MobileNo"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="Address"></label>
+            <input class="form-control" asp-for="Address" />
+            <span class="text-danger" asp-validation-for="Address"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="PostCode"></label>
+            <input class="form-control" asp-for="PostCode" />
+            <span class="text-danger" asp-validation-for="PostCode"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="LocationOfWork"></label>
+            <input class="form-control" asp-for="LocationOfWork" />
+            <span class="text-danger" asp-validation-for="LocationOfWork"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="Biography"></label>
+            <input class="form-control" asp-for="Biography" />
+            <span class="text-danger" asp-validation-for="Biography"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="KeyWordsForSkill"></label>
+            <input class="form-control" asp-for="KeyWordsForSkill" />
+            <span class="text-danger" asp-validation-for="KeyWordsForSkill"></span>
+        </div>
+        <!--Sports Type-->
+        <div class="form-group">
+            <label class="control-label" asp-for="Category" class="col-sm-2 col-form-label"></label>
+            <select class="form-control" asp-for="Category" asp-items="Html.GetEnumSelectList<SportsCategory>()">
+                <option value="">Please Select</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Category"></span>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success btn-lg btn-block" type="submit" value="Submit" />
+        </div>
+    </div>
+</form>

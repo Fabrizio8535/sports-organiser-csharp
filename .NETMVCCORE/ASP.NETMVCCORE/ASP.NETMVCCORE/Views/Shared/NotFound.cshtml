@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Not Found";
+}
+
+<div class="alert alert-danger mt-1 mb-1">
+    <div class="text-center">
+        <h1>ERROR, The requested page @ViewBag.Path @ViewBag.QS could not be found</h1>
+
+    </div>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-success btn-lg btn-block"> Go to Index</a>
+</div>

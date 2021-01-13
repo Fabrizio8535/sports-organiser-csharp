@@ -1,0 +1,99 @@
+﻿@model ASP.NETMVCCORE.ViewModels.ViewUserDetailsViewModel;
+@{
+    ViewBag.Title = "User's details";
+}
+
+<h1 class="text-center">User Details</h1>
+<hr />
+
+<!--
+    <div class="container-fluid text-center">
+        <div class="row center-block m-4">
+            <div class="card m-4">
+                <div class="col-sm-6">
+                    <div class="card" style="width: 35rem;">
+                        <div class="card-body">
+                            <h3 class="card-title">@Model.User.Name</h3>
+                            <div class="row">
+                                <img class="card-img-top" src="~/images/bootStrapImageHolder.jpg" width="300px" height="250px" />
+                            </div>
+                            <p class="card-text"><b>Date Of Birth</b>- @Model.User.DOB</p>
+                            <p class="card-text"><b>Gender</b>- @Model.User.Gender</p>
+                            <p class="card-text"><b>Email</b>- @Model.User.Email</p>
+                            <p class="card-text"><b>Contact Number</b>- @Model.User.MobileNo</p>
+                            <p class="card-text"><b>Address</b>- @Model.User.Address</p>
+                            <p class="card-text"><b>PostCode</b>- @Model.User.PostCode</p>
+                            <p class="card-text"><b>Location Of Work</b>- @Model.User.LocationOfWork</p>
+                            <p class="card-text"><b>Biography</b>- @Model.User.Biography</p>
+                            <p class="card-text"><b>Skills</b>- @Model.User.KeyWordsForSkill</p>
+                            <div class="text-center">
+                                <form asp-action="Delete" asp-route-id="@Model.User.ID" method="post">
+                                    <a asp-controller="Admin" asp-action="Index" class="btn btn-default">Back</a>
+                                    <a asp-controller="Admin" asp-action="AddorEdit" asp-route-id="@Model.User.ID" class="btn btn-primary">Edit</a>
+                                    <button type="submit" onclick="return confirm('Are you sure you want to delete records for @Model.User.Name?')" asp-controller="Admin" asp-action="Delete" asp-route-id="@Model.User.ID" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+<div class="row center-block">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3 class="card-title text-primary"><b>@Model.User.Name</b></h3>
+        </div>
+        <hr />
+        <div class="card-body">
+            <img class="img-responsive center-block" src="~/images/bootStrapImageHolder.jpg" style="width:300px; height:250px;" />
+            <br />
+            <div class="card-text text-info">
+                <p><b>Sports Category</b>- @Model.User.Category</p>
+                @if (Model.User.DOB == null)
+                {
+                    <p class="card-text"><b>Date Of Birth</b>- <b>N/A</b></p>
+                }
+                else
+                {
+                    <p class="card-text"><b>Date Of Birth</b>- @Model.User.DOB</p>
+                }
+                <p><b>Gender</b>- @Model.User.Gender</p>
+                <p><b>Email</b>- @Model.User.Email</p>
+                <p><b>Telephone Number</b>- @Model.User.MobileNo</p>
+                <p><b>Address</b>- @Model.User.Address</p>
+                <p><b>PostCode</b>- @Model.User.PostCode</p>
+                <p><b>Location Of Work</b>- @Model.User.LocationOfWork</p>
+                @if (Model.User.Biography == null)
+                {
+                    <p><b>Biography</b>- <b>N/A</b></p>
+                }
+                else
+                {
+                    <p><b>Biography</b>- @Model.User.Biography</p>
+                }
+                @if (Model.User.KeyWordsForSkill == null)
+                {
+                    <p><b>Skills Mentioned</b>- <b>N/A</b></p>
+                }
+                else
+                {
+                    <p><b>Skills</b>- @Model.User.KeyWordsForSkill</p>
+                }
+            </div>
+            <div class="text-center">
+                <form asp-action="Delete" asp-route-id="@Model.User.ID" method="post">
+                    <a asp-controller="Admin" asp-action="Index" class="btn btn-primary">Back</a>
+                    <a asp-controller="Admin" asp-action="AddorEdit" asp-route-id="@Model.User.ID" class="btn btn-warning">Edit</a>
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete records for @Model.User.Name?')" asp-controller="Admin" asp-action="Delete" asp-route-id="@Model.User.ID" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+</div>

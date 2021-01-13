@@ -1,0 +1,17 @@
+﻿<h1 class="text-danger text-center">Error!</h1>
+<h2 class="text-danger text-center">An error occurred while processing your request.</h2>
+
+<div class="alert alert-danger">
+    <div>
+        <h2>Exception Path - @ViewBag.ExceptionPath</h2>
+    </div>
+    <div>
+        <h3>Exception Message - @ViewBag.ExceptionMessage</h3>
+    </div>
+    <div>
+        <p>Exception StackTrace - @ViewBag.StackTrace</p>
+    </div>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-success btn-lg btn-block"> Go to Index</a>
+</div>
